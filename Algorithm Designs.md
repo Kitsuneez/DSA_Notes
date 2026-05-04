@@ -20,13 +20,13 @@ tags:
 	- Merge Sort
 	- Quick Sort
 ### Binary Search
-![Pasted image 20260202111312.png](./images/Pasted image 20260202111312.png)
+![Pasted image 20260202111312.png](./images/Pasted_image_20260202111312.png)
 > - take middle element
 > - compare value with middle value
 > - take left if <, right if >
 > - take new middle element until middle element is number
 ### Merge Sort
-![Pasted image 20260202111344.png](./images/Pasted image 20260202111344.png)
+![Pasted image 20260202111344.png](./images/Pasted_image_20260202111344.png)
 > - divide list into two list until one element left is in the list
 > - compare the two item, if right list is smaller than left list, place item on the left side of merge list
 > - for item in list compare previously merged list until it is sorted
@@ -77,7 +77,7 @@ result: [-13, -10, 3, 6, 7, 15, 23.5, 55]
 sorted: [-13, -10, 3, 6, 7, 15, 23.5, 55]
 ```
 ### Quick Sort
-![Pasted image 20260202111403.png](./images/Pasted image 20260202111403.png)
+![Pasted image 20260202111403.png](./images/Pasted_image_20260202111403.png)
 > - pick one data item in the list as pivot
 > - if x < pivot, then left list
 > - if x > pivot then right list
@@ -117,15 +117,15 @@ sorted: [-13, -10, 3, 6, 7, 15, 23.5, 55]
 - to execute nine jobs with the following running times 3,5,6,10,11,14,15,18,20 mins
 - resources: 3 processors to run the jobs
 - Approach 1: Do longest jobs first, on whatever processor is available
-	![Pasted image 20260202114652.png](./images/Pasted image 20260202114652.png)
+	![Pasted image 20260202114652.png](./images/Pasted_image_20260202114652.png)
 	Time to completion: $18 + 11 + 6 = 35$ mins. is there a better solution?
 - Approach 2: do shortest jobs first
-	![Pasted image 20260202114754.png](./images/Pasted image 20260202114754.png)
+	![Pasted image 20260202114754.png](./images/Pasted_image_20260202114754.png)
 	Not good; time needed is $6+14+20=40$ minutes.
 	However that the greedy algorithm itself is fast; at each stage just pick min or max
 ### Optimal Solution
 - Better solutions do exists:
-	![Pasted image 20260202114918.png](./images/Pasted image 20260202114918.png)
+	![Pasted image 20260202114918.png](./images/Pasted_image_20260202114918.png)
 - This solution is clearly optimal
 - How do we find such a solution then?
 	- One way: try all possible assignments of jobs to processors
@@ -159,7 +159,7 @@ sorted: [-13, -10, 3, 6, 7, 15, 23.5, 55]
 	- Backtrack if meet dead end (hence backtracking)
 - Trial and Error
 - Possible paths (use a tree to represent maze)
-	![Pasted image 20260202115850.png](./images/Pasted image 20260202115850.png)
+	![Pasted image 20260202115850.png](./images/Pasted_image_20260202115850.png)
 	```
 	BackTrack(K):
 		if K is solution:
@@ -182,7 +182,7 @@ sorted: [-13, -10, 3, 6, 7, 15, 23.5, 55]
 	- Then select the best solution so far: chess programs
 ## The n-Queens Problem
 - find all possible ways of placing n queens on an $n \times n$ chessboard so that no two queens occupy the same row, column or diagonal
-	![Pasted image 20260202120306.png](./images/Pasted image 20260202120306.png)
+	![Pasted image 20260202120306.png](./images/Pasted_image_20260202120306.png)
 > - Consider one row at at time
 > - within the row, consider one column at a time
 > - Look for a "safe" column to place a queen
@@ -204,7 +204,7 @@ sorted: [-13, -10, 3, 6, 7, 15, 23.5, 55]
 - for a rod of length n, there are $2^{n-1}$ ways to cut 
 - Example, when n =4, there are 8 possible ways to cut the rod
 ### Divide & Conquer
-![Pasted image 20260202121152.png](./images/Pasted image 20260202121152.png)
+![Pasted image 20260202121152.png](./images/Pasted_image_20260202121152.png)
 `return max(1+8, 5+5, 8+1, 9+0) = 10`
 #### Observation
 - the sub-problem (with n=2,1,0) are solved repeatedly
@@ -215,4 +215,4 @@ sorted: [-13, -10, 3, 6, 7, 15, 23.5, 55]
 - Uses additional memory to cut computation time
 - Time-memory trade-off
 - Dynamic Programming can transform many exponential time algorithms into polynomial-time
-![Pasted image 20260202121412.png](./images/Pasted image 20260202121412.png)
+![Pasted image 20260202121412.png](./images/Pasted_image_20260202121412.png)

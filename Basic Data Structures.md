@@ -102,7 +102,7 @@ tags:
 
 ### Visualization
 
-![image 160.png](./images/image 160.png)
+![image 160.png](./images/image_160.png)
 
 - How to access element in this list?
     - start from head node
@@ -124,7 +124,7 @@ tags:
         - if the list is empty(head id None) then assign node to head
         - else [node.next](http://node.next/) = head
 head = node
-![image 161.png](./images/image 161.png)
+![image 161.png](./images/image_161.png)
     - search(value)
         - start from the head node
         - compare the data at the node with the value
@@ -145,4 +145,4 @@ head = node
     - Data
     - reference to next node in the list
     - link to the previous node in the lsit
-![image 162.png](./images/image 162.png)
+![image 162.png](./images/image_162.png)
