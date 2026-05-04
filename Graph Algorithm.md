@@ -6,14 +6,14 @@
 - Cycle
 	- path whose first and last vertices are the same
 - Two vertices are connected if there is a path between them
-![[Pasted image 20260311155633.png]]
+![Pasted image 20260311155633.png](./images/Pasted image 20260311155633.png)
 # Graph Representations
 - Vertex representation
 	- use integers between 0 and V-1
 	- Applications
-		- convert between names and integers with symbol table ![[./images/image_196.png]]
+			- convert between names and integers with symbol table ![image_196.png](./images/image_196.png)
 		- Anomalies
-		  ![[./images/Pasted image 20260311155742.png]]
+		  ![Pasted image 20260311155742.png](./images/Pasted image 20260311155742.png)
 # Graph API
 
 | Public class Graph         | Description                           |
@@ -49,14 +49,14 @@ for v in g.adjList.keys():
 	for w in g.adjList[v]:
 		print(f"{v} - {w}")
 ```
-![[Pasted image 20260311160417.png]]![[Pasted image 20260311160457.png]]![[Pasted image 20260311160424.png]]
+![Pasted image 20260311160417.png](./images/Pasted image 20260311160417.png) ![Pasted image 20260311160457.png](./images/Pasted image 20260311160457.png) ![Pasted image 20260311160424.png](./images/Pasted image 20260311160424.png)
 # Graph Representation
 ## Adjacency Matrix
 - Maintain a two dimensional V-by-V Boolean array
-- For each edge v-w in graph: `adj[v][w] = adj[w][v] = true`![[Pasted image 20260311160650.png]]
+- For each edge v-w in graph: `adj[v][w] = adj[w][v] = true` ![Pasted image 20260311160650.png](./images/Pasted image 20260311160650.png)
 ## Adjacency List
 - Maintain vertex-indexed array of lists
-  ![[Pasted image 20260311161317.png]]![[Pasted image 20260311161326.png]]
+	![Pasted image 20260311161317.png](./images/Pasted image 20260311161317.png) ![Pasted image 20260311161326.png](./images/Pasted image 20260311161326.png)
 ## Summary
 - in practice, use adjacency-lists representation
 	- Algorithms based on iterating vertices adjacent to v
@@ -92,8 +92,8 @@ class Graph:
 - Maze Graph
 	- Vertex = intersection
 	- Edge = passage
-- Goal
-	- explore every intersection in the maze![[Pasted image 20260311162421.png]]
+	- Goal
+	- explore every intersection in the maze ![Pasted image 20260311162421.png](./images/Pasted image 20260311162421.png)
 ## Depth First Search
 - Goal
 	- systematically traverse a graph
@@ -189,10 +189,10 @@ class BreadthFirstPaths:
 ### Properties
 - in which order does BFS examine vertices?
 	- increasing distance (number of edges) from s
-- in any connected G, BFS computes the shortest paths from s to all other vertices in time proportional to E+V![[Pasted image 20260311164718.png]]
+- in any connected G, BFS computes the shortest paths from s to all other vertices in time proportional to E+V ![Pasted image 20260311164718.png](./images/Pasted image 20260311164718.png)
 ## Directed Graph
 - Digraph
-	- set of vertices connected pairwise by directed edges![[Pasted image 20260311164810.png]]
+	- set of vertices connected pairwise by directed edges ![Pasted image 20260311164810.png](./images/Pasted image 20260311164810.png)
 - Examples
 	- Road Network
 		- vertex = intersection
@@ -257,7 +257,7 @@ class DiGraph:
 4. Cryptography
 5. Scientific Computing
 6. Advanced Programming
-![[Pasted image 20260311165642.png]]![[Pasted image 20260311165647.png]]
+![Pasted image 20260311165642.png](./images/Pasted image 20260311165642.png) ![Pasted image 20260311165647.png](./images/Pasted image 20260311165647.png)
 ## InOrder, PreOrder, PostOrder
 - A graph traversal is a specific order in which to trace the nodes of a tree
 - There are 3 common tree traversals
@@ -269,9 +269,9 @@ class DiGraph:
 - return vertices in reverse post order
 - DAG -> directed acyclic graph
 - redraw DAG so all edges point upwards
-![[Pasted image 20260311165947.png]]
-![[Pasted image 20260311165955.png]]
-![[Pasted image 20260311170004.png]]
+![Pasted image 20260311165947.png](./images/Pasted image 20260311165947.png)
+![Pasted image 20260311165955.png](./images/Pasted image 20260311165955.png)
+![Pasted image 20260311170004.png](./images/Pasted image 20260311170004.png)
 ### Implementation
 ```Python
 from DiGraph import DiGraph
@@ -298,7 +298,7 @@ G = DiGraph("tinyDG.txt")
 ts = TopoSort(G)
 print ts.revPostOrder
 ```
-![[Pasted image 20260311170508.png]]
+![Pasted image 20260311170508.png](./images/Pasted image 20260311170508.png)
 # Spanning Tree
 - problem
 	- design a transportation system that
@@ -326,7 +326,7 @@ print ts.revPostOrder
 | Circuit            | Component   | Wire              |
 | Airline            | airport     | flight route      |
 | Power distribution | Power plant | Transmission line |
-![[Pasted image 20260316150001.png]]
+![Pasted image 20260316150001.png](./images/Pasted image 20260316150001.png)
 ## Assumptions
 1. What if edge weights are not all distinct?
 	1. Greedy MST algorithm still correct if equal weight are present
@@ -379,7 +379,7 @@ class Edge:
 		return f"[{self.v}-{self.w}, {self.weight}]"
 ```
 ## Adjacency List Representation
-![[Pasted image 20260316150952.png]]
+![Pasted image 20260316150952.png](./images/Pasted image 20260316150952.png)
 ## Implementation
 ```Python
 class EdgeWeightedGraph:
@@ -419,10 +419,10 @@ class EdgeWeightedGraph:
 - Start with vertex 0 and greedily grow tree T
 - add T the min weight edge with exactly one endpoint in T
 - repeat until `V-1` edges
-![[Pasted image 20260316183313.png]]
+![Pasted image 20260316183313.png](./images/Pasted image 20260316183313.png)
 edge-weight graph ^
 MST edges:
-0-7 1-7 0-2 2-3 5-7 4-5 6-2![[Pasted image 20260316183416.png]]
+0-7 1-7 0-2 2-3 5-7 4-5 6-2 ![Pasted image 20260316183416.png](./images/Pasted image 20260316183416.png)
 ## Steps
 1. add node 0 to MST and insert neighbour of 0 into Priority Queue
 2. add node 7 to MST and delete min edge 0-7 from PQ
@@ -448,7 +448,7 @@ MST edges:
 		- add e to T and mark w
 ### Lazy Implementation
 - 1-7 is min weight edge with exactly one endpoint in T
-![[Pasted image 20260316184151.png]]
+![Pasted image 20260316184151.png](./images/Pasted image 20260316184151.png)
 ```Python
 from collections import deque
 from spanning import EdgeWeightedGraph
@@ -574,7 +574,7 @@ if __name__ == "__main__":
     print(sum)
 ```
 # Shortest Path
-- given an edge-weight DiGraph, Find the shortest path from s to t![[Pasted image 20260316192126.png]]
+- given an edge-weight DiGraph, Find the shortest path from s to t ![Pasted image 20260316192126.png](./images/Pasted image 20260316192126.png)
 ### Weight Directed Edge API
 
 | public class DirectedEdge                 | Description          |

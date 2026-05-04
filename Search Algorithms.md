@@ -292,7 +292,7 @@ class SeparateChainingST:
 $$h+1^2, h+2^2, h+3^2, h+4^2, h+5^2$$
 $$h+1, h+4, h+9, h+16, h+25$$
 - Search: search table index i; if occupied but not match, try `(i+1)%m`, `(i+4)%m`, etc
-![[Pasted image 20260301151129.png]]
+![Pasted image 20260301151129.png](./images/Pasted image 20260301151129.png)
 ## Double Hashing
 - Probe Sequence is
 	- H(k) mod m
@@ -301,7 +301,7 @@ $$h+1, h+4, h+9, h+16, h+25$$
 	- ...
 - $h_2(k)$ should never evaluate to 0
 	- $h_2(k)$ = (k mod 5) + 1
-![[Pasted image 20260301151312.png]]
+![Pasted image 20260301151312.png](./images/Pasted image 20260301151312.png)
 ## Hashing Analysis
 - Best and Average case : O(1)
 - Worst case: O(N)
@@ -391,7 +391,7 @@ def put(self, node, key, val):
 ```
 ## Tree Shape
 - Many BSTs corresponds to same set of keys
-- Number of compares for Search/Insert is equal to 1 + depth of node![[Pasted image 20260304145833.png]]
+- Number of compares for Search/Insert is equal to 1 + depth of node ![Pasted image 20260304145833.png](./images/Pasted image 20260304145833.png)
 - Bottom line: tree shape depends on order off insertion
 ## Traversal of nodes in BST
 - visiting all the nodes in a graph
@@ -399,7 +399,7 @@ def put(self, node, key, val):
 	- current node
 	- left subtree
 	- right subtree 
-	![[Pasted image 20260304150502.png]]
+	![Pasted image 20260304150502.png](./images/Pasted image 20260304150502.png)
 - inOrder
 	1. Left
 	2. Current
@@ -424,7 +424,7 @@ def put(self, node, key, val):
 - in each node, we store the number of nodes in the subtree rooted at that node
 - implement `size()`
 - return the count at the root
-![[Pasted image 20260304151159.png]]
+![Pasted image 20260304151159.png](./images/Pasted image 20260304151159.png)
 ### Deleting Minimum Key
 - To delete the minimum key:
 	- Go left until find a node with a null left link
@@ -441,19 +441,19 @@ def deleteMin2(self, node):
 	node.count = 1 + sel.size(node.left) + self.size(node.right)
 	return node
 ```
-![[Pasted image 20260304151429.png]]
+![Pasted image 20260304151429.png](./images/Pasted image 20260304151429.png)
 ### Deleting Any Key
 - to delete a node with key k: search for node t containing key k
 - Case 0
 	- 0 children
 	- Delete t by setting parent link to null
-![[Pasted image 20260304151558.png]]
+![Pasted image 20260304151558.png](./images/Pasted image 20260304151558.png)
 - case 2
 	- 2 children
 	- find the successor x of t
 	- delete t
 	- put x in t's spot
-![[Pasted image 20260304151650.png]]
+![Pasted image 20260304151650.png](./images/Pasted image 20260304151650.png)
 ```Python
 def delete(self, key):
 	self.root = self.delete2(self.root, key)
@@ -491,24 +491,24 @@ def delete2(self, node, key):
 - Compare search key against keys in node
 - Find interval containing search key
 - follow associated link (recursively)
-![[Pasted image 20260304155239.png]]
+![Pasted image 20260304155239.png](./images/Pasted image 20260304155239.png)
 ## Insert
 - Insertion into a 2 node at bottom.
 	- add new key to 2-node to create a 3-node
-	![[Pasted image 20260304155409.png]]
+	![Pasted image 20260304155409.png](./images/Pasted image 20260304155409.png)
 - Insertion into a 3-node at bottom
 	- Add new key to 3-node to create temporary 4-node
 	- Move middle key in 4-node into parent
 	- Repeat up the tree, as necessary
 	- If you reach the root and it is a 4-node, split it into tree 2-nodes
-	![[Pasted image 20260304155921.png]]
+	![Pasted image 20260304155921.png](./images/Pasted image 20260304155921.png)
 ## Local Transformation
 - splitting a 4-node is a local transformation: constant number of operations
-![[Pasted image 20260304160023.png]]
+![Pasted image 20260304160023.png](./images/Pasted image 20260304160023.png)
 ## Global Properties
 - Invariants: Maintains symmetric order and perfect balance
 - Each transformation maintains symmetric order and perfect balance
-![[Pasted image 20260304160114.png]]
+![Pasted image 20260304160114.png](./images/Pasted image 20260304160114.png)
 ## Tree Performance
 - Perfect balance
 	- each path from root to null link has the same length
@@ -539,19 +539,19 @@ def delete2(self, node, key):
 ### Left Learning Red-Black BSTs
 - represent 2-3 tree as a BST
 - Use "Internal" left-leaning links as "glue" for 3-nodes
-![[Pasted image 20260304160820.png]]
+![Pasted image 20260304160820.png](./images/Pasted image 20260304160820.png)
 - no node has two red links connected to it \[no 4 nodes]
 - each path from root to null link has the same number of black links
 - Red links lean left
 #### LLRB BST vs 2-3 Trees
 - key property
 	- 1-1 correspondence between 2-3 Tree and LLRBT
-![[Pasted image 20260304161047.png]]
+![Pasted image 20260304161047.png](./images/Pasted image 20260304161047.png)
 ### LLRBT Search
 - Observation:
 	- search is the same as for elementary BST (ignore color)
 	- Runs faster because of better balance
-- Remark: most other operations (e.g min, max, size) are the same![[Pasted image 20260304161303.png]]
+- Remark: most other operations (e.g min, max, size) are the same ![Pasted image 20260304161303.png](./images/Pasted image 20260304161303.png)
 ### LLRBT Representation
 - Each node is pointed to by precisely one link (from its parent)
 	- can encode colour of links in nodes
@@ -578,17 +578,17 @@ class Node:
 		else:
 			return n.color == NODE.RED
 ```
-![[Pasted image 20260304161555.png]]
+![Pasted image 20260304161555.png](./images/Pasted image 20260304161555.png)
 ### LLRBT Maintenance
 - Basic strategy: maintain 1-1 correspondence with 2-3 trees
 - During internal operations, maintains
 	- Symmetric order
-	- Perfect black balance ( but not necessarily colour invariants)![[Pasted image 20260304161729.png]]
+	- Perfect black balance ( but not necessarily colour invariants) ![Pasted image 20260304161729.png](./images/Pasted image 20260304161729.png)
 - Apply elementary red-black BST operation: rotation & flip
 ### LLRBT Rotation
 - Left rotation
 	- orient a (temporarily) right leaning red link to lean left
-![[Pasted image 20260304161841.png]]
+![Pasted image 20260304161841.png](./images/Pasted image 20260304161841.png)
 ```Python
 def rotateLeft(self, h):
 	assert(self.isRed(h.right))
@@ -600,7 +600,7 @@ def rotateLeft(self, h):
 	return x
 ```
 - Right Rotation
-	- orient a left-leaning red link to (temporarily) lean right![[Pasted image 20260304162037.png]]
+	- orient a left-leaning red link to (temporarily) lean right ![Pasted image 20260304162037.png](./images/Pasted image 20260304162037.png)
 ```Python
 def rotateRight(self, h):
 	assert(self.isRed(h.left))
@@ -612,7 +612,7 @@ def rotateRight(self, h):
 	return x
 ```
 - Color Flip
-	- Recolour to split a (temporarily) 4-node![[Pasted image 20260304162242.png]]
+	- Recolour to split a (temporarily) 4-node ![Pasted image 20260304162242.png](./images/Pasted image 20260304162242.png)
 ```Python
 def flipColors(self, h):
 	assert(not self.isRed(h))
@@ -623,12 +623,12 @@ def flipColors(self, h):
 	h.right.color = Node.BLACK
 ```
 ### LLRBT Insertion
-- insert into a tree with exactly 1 node![[Pasted image 20260304162437.png]]
+- insert into a tree with exactly 1 node ![Pasted image 20260304162437.png](./images/Pasted image 20260304162437.png)
 - insert into a 2-node at the bottom
 	- do standard BST insert, color new link red
 	- if new red link is a right link, rotate left 
-	![[Pasted image 20260304162657.png]]
-- Insert into a tree with exactly 2 nodes![[Pasted image 20260304162736.png]]
+	![Pasted image 20260304162657.png](./images/Pasted image 20260304162657.png)
+- Insert into a tree with exactly 2 nodes ![Pasted image 20260304162736.png](./images/Pasted image 20260304162736.png)
 - insert into a 3 node at the bottom
 	- do standard BST; color new link red
 	- Rotate to balance the 4 node (if needed)
@@ -640,7 +640,7 @@ def flipColors(self, h):
 	- Right child red, left child black: rotate left
 	- left child, left - left grandchild red: rotate right
 	- Both children red: flip colours
-![[Pasted image 20260304163342.png]]
+![Pasted image 20260304163342.png](./images/Pasted image 20260304163342.png)
 ```Python
 def put(self, node, key, val):
 	# Insert at bottom and color it red

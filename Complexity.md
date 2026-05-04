@@ -126,7 +126,7 @@ Then the algorithm A is better than algorithm b for a problems size $n_0$
 ### Big-O Notation
 - concerned with what happens for very of large value of `n` 
 
-![[image 191.png]]
+![image 191.png](./images/image 191.png)
 
 > [!note] ➡️
 > 
@@ -189,7 +189,7 @@ def count(a,N):
     - drop lower-order terms
     - drop constant factors
 - Example
-![[image 192.png]]
+![image 192.png](./images/image 192.png)
 
 ## Big-O and Growth Rate
 
@@ -242,15 +242,15 @@ The big-O notation gives an upper bound on the growth rate of a function
 
 ## Big-O
 
-![[image 193.png]]
+![image 193.png](./images/image 193.png)
 
 ## Big-Omega
 
-![[image 194.png]]
+![image 194.png](./images/image 194.png)
 
 ## Big-Theta
 
-![[image 195.png]]
+![image 195.png](./images/image 195.png)
 
 # Decision Tree to determine Big-O
 - is loop dependent? `for i in range(n)`
