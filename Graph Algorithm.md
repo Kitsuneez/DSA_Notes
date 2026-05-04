@@ -11,9 +11,9 @@
 - Vertex representation
 	- use integers between 0 and V-1
 	- Applications
-		- convert between names and integers with symbol table ![[images/image_196.png]]
+		- convert between names and integers with symbol table ![[./images/image_196.png]]
 		- Anomalies
-		  ![[images/Pasted image 20260311155742.png]]
+		  ![[./images/Pasted image 20260311155742.png]]
 # Graph API
 
 | Public class Graph         | Description                           |
